@@ -1,3 +1,4 @@
+import { BlogSection } from './portfolio/components/BlogSection'
 import { ContactSection } from './portfolio/components/ContactSection'
 import { ExperienceSection } from './portfolio/components/ExperienceSection'
 import { HeroSection } from './portfolio/components/HeroSection'
@@ -10,6 +11,7 @@ import './portfolio/Portfolio.css'
 
 export default function Portfolio({ content, localeSwitch }) {
   const {
+    blogSection,
     contact,
     contactSection,
     experiences,
@@ -54,6 +56,7 @@ export default function Portfolio({ content, localeSwitch }) {
       <ExperienceSection section={workHistorySection} experiences={experiences} />
       <SkillsSection section={skillsSection} skillGroups={skillGroups} />
       <ProjectsSection section={projectSection} projects={projects} />
+      <BlogSection section={blogSection} />
       <ContactSection section={contactSection} contact={contact} />
       <PortfolioFooter footer={footer} />
     </div>

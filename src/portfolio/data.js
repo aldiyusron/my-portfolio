@@ -4,6 +4,7 @@ const ENGLISH_CONTENT = {
     { id: 'experience', label: 'experience' },
     { id: 'skills', label: 'skills' },
     { id: 'projects', label: 'projects' },
+    { id: 'blog', label: 'blog' },
     { id: 'contact', label: 'contact' },
   ],
   typingStrings: [
@@ -163,9 +164,16 @@ const ENGLISH_CONTENT = {
       tags: ['Angular', 'Firebase', 'PWA', 'Service Workers'],
     },
   ],
+  blogSection: {
+    id: 'blog',
+    label: '04 // Writing',
+    heading: 'Blog',
+    cta: 'Read on Medium ↗',
+    emptyState: 'Articles coming soon.',
+  },
   contactSection: {
     id: 'contact',
-    label: "04 // Let's Connect",
+    label: "05 // Let's Connect",
     heading: 'Get In Touch',
   },
   contact: {
@@ -197,6 +205,7 @@ const INDONESIAN_CONTENT = {
     { id: 'experience', label: 'pengalaman' },
     { id: 'skills', label: 'keahlian' },
     { id: 'projects', label: 'proyek' },
+    { id: 'blog', label: 'blog' },
     { id: 'contact', label: 'kontak' },
   ],
   typingStrings: [
@@ -356,9 +365,16 @@ const INDONESIAN_CONTENT = {
       tags: ['Angular', 'Firebase', 'PWA', 'Service Workers'],
     },
   ],
+  blogSection: {
+    id: 'blog',
+    label: '04 // Tulisan',
+    heading: 'Blog',
+    cta: 'Baca di Medium ↗',
+    emptyState: 'Artikel segera hadir.',
+  },
   contactSection: {
     id: 'contact',
-    label: '04 // Mari Terhubung',
+    label: '05 // Mari Terhubung',
     heading: 'Hubungi Saya',
   },
   contact: {
