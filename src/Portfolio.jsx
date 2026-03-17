@@ -202,7 +202,7 @@ export default function Portfolio() {
 
         {/* ── Hero / About ── */}
         <section id="about" className="pf-hero">
-          <div className="pf-hero__tag">// available for new opportunities</div>
+          <div className="pf-hero__tag">// let's build something great together</div>
           <h1 className="pf-hero__name">
             Muhammad<br />Aldi Yusron
           </h1>
