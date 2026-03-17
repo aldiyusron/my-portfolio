@@ -4,6 +4,7 @@ const ENGLISH_CONTENT = {
     { id: 'experience', label: 'experience' },
     { id: 'skills', label: 'skills' },
     { id: 'projects', label: 'projects' },
+    { id: 'blog', label: 'blog' },
     { id: 'contact', label: 'contact' },
   ],
   typingStrings: [
@@ -163,9 +164,26 @@ const ENGLISH_CONTENT = {
       tags: ['Angular', 'Firebase', 'PWA', 'Service Workers'],
     },
   ],
+  blogSection: {
+    id: 'blog',
+    label: '04 // Writing',
+    heading: 'Blog',
+    cta: 'Read on Medium ↗',
+    emptyState: 'Articles coming soon.',
+  },
+  posts: [
+    {
+      title: 'How I Built My Personal Website with React and Vite',
+      excerpt:
+        'A walkthrough of the design decisions, component architecture, and developer experience behind building this portfolio — from zero to deployed on Vercel.',
+      date: 'Mar 2026',
+      tags: ['React', 'Vite', 'Portfolio'],
+      href: '#',
+    },
+  ],
   contactSection: {
     id: 'contact',
-    label: "04 // Let's Connect",
+    label: "05 // Let's Connect",
     heading: 'Get In Touch',
   },
   contact: {
@@ -197,6 +215,7 @@ const INDONESIAN_CONTENT = {
     { id: 'experience', label: 'pengalaman' },
     { id: 'skills', label: 'keahlian' },
     { id: 'projects', label: 'proyek' },
+    { id: 'blog', label: 'blog' },
     { id: 'contact', label: 'kontak' },
   ],
   typingStrings: [
@@ -356,9 +375,26 @@ const INDONESIAN_CONTENT = {
       tags: ['Angular', 'Firebase', 'PWA', 'Service Workers'],
     },
   ],
+  blogSection: {
+    id: 'blog',
+    label: '04 // Tulisan',
+    heading: 'Blog',
+    cta: 'Baca di Medium ↗',
+    emptyState: 'Artikel segera hadir.',
+  },
+  posts: [
+    {
+      title: 'Cara Saya Membangun Website Portofolio dengan React dan Vite',
+      excerpt:
+        'Panduan lengkap tentang keputusan desain, arsitektur komponen, dan pengalaman pengembangan di balik pembuatan portofolio ini — dari nol hingga deploy di Vercel.',
+      date: 'Mar 2026',
+      tags: ['React', 'Vite', 'Portofolio'],
+      href: '#',
+    },
+  ],
   contactSection: {
     id: 'contact',
-    label: '04 // Mari Terhubung',
+    label: '05 // Mari Terhubung',
     heading: 'Hubungi Saya',
   },
   contact: {
