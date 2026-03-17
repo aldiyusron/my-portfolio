@@ -448,7 +448,7 @@ body {
 .pf-section {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 80px var(--pad);
+  padding: 56px var(--pad);
 }
 
 /* ── Section labels / headings ── */
@@ -483,7 +483,7 @@ body {
 .pf-hero {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 140px var(--pad) 80px;
+  padding: 120px var(--pad) 56px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -626,7 +626,10 @@ body {
 .pf-timeline__item {
   position: relative;
   padding-left: 36px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+}
+.pf-timeline__item:last-child {
+  margin-bottom: 0;
 }
 .pf-timeline__item::before {
   content: '';
@@ -876,8 +879,8 @@ body {
 @media (max-width: 768px) {
   :root { --pad: 24px; }
   .pf-nav__links { display: none; }
-  .pf-hero { padding: 110px var(--pad) 60px; }
-  .pf-section { padding: 56px var(--pad); }
+  .pf-hero { padding: 100px var(--pad) 48px; }
+  .pf-section { padding: 48px var(--pad); }
   .pf-exp__top { flex-direction: column; gap: 4px; }
   .pf-hero__stats { gap: 24px; }
   .pf-stat__num { font-size: 26px; }
