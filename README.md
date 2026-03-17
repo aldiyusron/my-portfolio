@@ -1,16 +1,45 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built with React and Vite.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React 19
+- Vite 8
+- ESLint 9
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting Started
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open the local URL shown in the terminal.
 
-## React Compiler
+## Available Scripts
+- `npm run dev`: run Vite with hot reload for local development.
+- `npm run build`: create a production build in `dist/`.
+- `npm run preview`: preview the production build locally.
+- `npm run lint`: run ESLint checks.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
+```text
+my-portfolio/
+├─ public/            # static assets served directly
+├─ src/
+│  ├─ assets/         # images and local media
+│  ├─ App.jsx         # app entry component
+│  ├─ Portfolio.jsx   # main portfolio page and styles
+│  ├─ index.css       # global base styles
+│  └─ main.jsx        # React bootstrap
+├─ index.html
+├─ eslint.config.js
+└─ vite.config.js
+```
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Development Notes
+- Main page implementation is in `src/Portfolio.jsx`.
+- Keep styles and class names consistent with existing `pf-*` naming.
+- Run `npm run lint && npm run build` before creating a PR.
