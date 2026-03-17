@@ -171,16 +171,6 @@ const ENGLISH_CONTENT = {
     cta: 'Read on Medium ↗',
     emptyState: 'Articles coming soon.',
   },
-  posts: [
-    {
-      title: 'How I Built My Personal Website with React and Vite',
-      excerpt:
-        'A walkthrough of the design decisions, component architecture, and developer experience behind building this portfolio — from zero to deployed on Vercel.',
-      date: 'Mar 2026',
-      tags: ['React', 'Vite', 'Portfolio'],
-      href: '#',
-    },
-  ],
   contactSection: {
     id: 'contact',
     label: "05 // Let's Connect",
@@ -382,16 +372,6 @@ const INDONESIAN_CONTENT = {
     cta: 'Baca di Medium ↗',
     emptyState: 'Artikel segera hadir.',
   },
-  posts: [
-    {
-      title: 'Cara Saya Membangun Website Portofolio dengan React dan Vite',
-      excerpt:
-        'Panduan lengkap tentang keputusan desain, arsitektur komponen, dan pengalaman pengembangan di balik pembuatan portofolio ini — dari nol hingga deploy di Vercel.',
-      date: 'Mar 2026',
-      tags: ['React', 'Vite', 'Portofolio'],
-      href: '#',
-    },
-  ],
   contactSection: {
     id: 'contact',
     label: '05 // Mari Terhubung',

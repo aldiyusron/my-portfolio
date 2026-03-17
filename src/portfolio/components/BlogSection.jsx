@@ -1,16 +1,44 @@
+import { useMediumPosts } from '../hooks/useMediumPosts'
 import { SectionHeading } from './SectionHeading'
 
-export function BlogSection({ section, posts }) {
+function PostSkeleton() {
+  return (
+    <div className='pf-post pf-post--skeleton'>
+      <div className='pf-post__meta'>
+        <div className='pf-skeleton pf-skeleton--date' />
+        <div className='pf-skeleton pf-skeleton--tag' />
+      </div>
+      <div className='pf-post__body'>
+        <div className='pf-skeleton pf-skeleton--title' />
+        <div className='pf-skeleton pf-skeleton--line' />
+        <div className='pf-skeleton pf-skeleton--line pf-skeleton--short' />
+      </div>
+    </div>
+  )
+}
+
+export function BlogSection({ section }) {
+  const { posts, loading, error } = useMediumPosts()
+
   return (
     <section id={section.id} className='pf-section'>
       <SectionHeading label={section.label} heading={section.heading} />
-      {posts.length === 0 ? (
-        <p className='pf-blog__empty'>{section.emptyState}</p>
-      ) : (
-        <div className='pf-blog'>
-          {posts.map((post) => (
+      <div className='pf-blog'>
+        {loading && (
+          <>
+            <PostSkeleton />
+            <PostSkeleton />
+          </>
+        )}
+        {error && <p className='pf-blog__empty'>{section.emptyState}</p>}
+        {!loading && !error && posts.length === 0 && (
+          <p className='pf-blog__empty'>{section.emptyState}</p>
+        )}
+        {!loading &&
+          !error &&
+          posts.map((post) => (
             <a
-              key={post.title}
+              key={post.href}
               href={post.href}
               className='pf-post'
               target='_blank'
@@ -34,8 +62,7 @@ export function BlogSection({ section, posts }) {
               <div className='pf-post__line' />
             </a>
           ))}
-        </div>
-      )}
+      </div>
     </section>
   )
 }

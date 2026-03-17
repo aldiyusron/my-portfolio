@@ -18,7 +18,6 @@ export default function Portfolio({ content, localeSwitch }) {
     footer,
     hero,
     navItems,
-    posts,
     projects,
     projectSection,
     skillGroups,
@@ -57,7 +56,7 @@ export default function Portfolio({ content, localeSwitch }) {
       <ExperienceSection section={workHistorySection} experiences={experiences} />
       <SkillsSection section={skillsSection} skillGroups={skillGroups} />
       <ProjectsSection section={projectSection} projects={projects} />
-      <BlogSection section={blogSection} posts={posts} />
+      <BlogSection section={blogSection} />
       <ContactSection section={contactSection} contact={contact} />
       <PortfolioFooter footer={footer} />
     </div>
