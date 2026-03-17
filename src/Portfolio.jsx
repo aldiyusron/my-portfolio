@@ -448,7 +448,7 @@ body {
 .pf-section {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 120px var(--pad);
+  padding: 80px var(--pad);
 }
 
 /* ── Section labels / headings ── */
@@ -476,14 +476,14 @@ body {
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.01em;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 
 /* ── Hero ── */
 .pf-hero {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 180px var(--pad) 100px;
+  padding: 140px var(--pad) 80px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -548,7 +548,7 @@ body {
 }
 .pf-hero__cta {
   display: flex; gap: 16px; flex-wrap: wrap;
-  margin-bottom: 72px;
+  margin-bottom: 48px;
   opacity: 0;
   animation: fadeUp 0.6s ease 0.55s forwards;
 }
@@ -876,8 +876,8 @@ body {
 @media (max-width: 768px) {
   :root { --pad: 24px; }
   .pf-nav__links { display: none; }
-  .pf-hero { padding: 130px var(--pad) 80px; }
-  .pf-section { padding: 80px var(--pad); }
+  .pf-hero { padding: 110px var(--pad) 60px; }
+  .pf-section { padding: 56px var(--pad); }
   .pf-exp__top { flex-direction: column; gap: 4px; }
   .pf-hero__stats { gap: 24px; }
   .pf-stat__num { font-size: 26px; }
