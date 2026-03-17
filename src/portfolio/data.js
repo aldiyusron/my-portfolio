@@ -203,14 +203,14 @@ const INDONESIAN_CONTENT = {
     'Frontend Engineer',
     'Spesialis Vue.js',
     'Developer React',
-    'Perajin TypeScript',
+    'TypeScript Enthusiast',
   ],
   hero: {
-    tag: '// mari bangun sesuatu yang hebat bersama',
+    tag: '// yuk, kita bangun sesuatu yang keren bareng',
     firstName: 'Muhammad',
     lastName: 'Aldi Yusron',
     summary:
-      'Frontend engineer berpengalaman yang berfokus pada aplikasi web scalable menggunakan Vue.js, React (Remix), dan TypeScript, dengan pengalaman lebih dari 6 tahun. Termasuk pengadopsi awal pengembangan berbasis AI, memanfaatkan Claude Code untuk mempercepat delivery dan meningkatkan kualitas kode.',
+      'Frontend engineer dengan 6+ tahun pengalaman membangun aplikasi web yang scalable pakai Vue.js, React (Remix), dan TypeScript. Aktif mengintegrasikan AI ke dalam workflow sehari-hari — memanfaatkan Claude Code untuk mempercepat development dan menjaga kualitas kode tetap tinggi.',
     primaryCta: {
       href: 'mailto:hello@aldiyusron.com',
       label: 'Hubungi Saya',
@@ -239,11 +239,11 @@ const INDONESIAN_CONTENT = {
       location: 'Remote',
       date: 'Jul 2025 – Sekarang',
       bullets: [
-        'Merancang frontend CRM bernilai tinggi menggunakan Remix dan shadcn/UI dengan autentikasi JWT yang aman serta validasi berbasis Zod.',
-        'Membangun email builder drag-and-drop kustom dengan mengembangkan email-builder-js untuk mendukung otomasi pelanggan yang lebih personal.',
-        'Mengintegrasikan alur pembuatan email berbasis AI dengan memanfaatkan LLM untuk membantu pengguna menyusun komunikasi dengan konversi tinggi.',
-        'Membangun dashboard analitik data dengan Recharts dan TanStack Query untuk visualisasi engagement pelanggan serta performa campaign.',
-        'Mengelola integrasi chatbot WhatsApp untuk memperkuat kemampuan komunikasi multi-channel.',
+        'Bangun frontend CRM pakai Remix dan shadcn/UI, lengkap dengan autentikasi JWT dan validasi Zod.',
+        'Kembangkan email builder drag-and-drop kustom di atas email-builder-js untuk mendukung otomasi pesan yang lebih personal ke pelanggan.',
+        'Integrasi fitur pembuatan email berbasis AI — pakai LLM untuk bantu pengguna nulis copy yang lebih efektif.',
+        'Buat dashboard analitik dengan Recharts dan TanStack Query untuk visualisasi engagement pelanggan dan performa campaign secara real-time.',
+        'Kelola integrasi chatbot WhatsApp sebagai bagian dari sistem komunikasi multi-channel.',
       ],
     },
     {
@@ -253,11 +253,11 @@ const INDONESIAN_CONTENT = {
       location: 'Jakarta, Indonesia',
       date: 'Mar 2021 – Sekarang',
       bullets: [
-        'Membangun dan memelihara fitur frontend menggunakan Vue.js, JavaScript, dan TypeScript yang selaras dengan RESTful API serta spesifikasi UX.',
-        'Memigrasikan frontend dari codebase monolitik Haml & React.js ke layanan modular, meningkatkan skalabilitas dan LCP melalui optimasi CDN.',
-        'Berkolaborasi dengan tim DevOps untuk menyiapkan monitoring Datadog sehingga error rate turun 80%.',
-        'Menstandarkan workflow TDD yang AI-native menggunakan planning dan Agent Parallelization di Claude Code untuk meningkatkan konsistensi dan menekan biaya operasional.',
-        'Mengimplementasikan CI/CD melalui Bitbucket Pipelines dan caching sisi klien dengan Vuex untuk mengurangi API call yang redundan.',
+        'Bangun dan maintain fitur-fitur frontend pakai Vue.js, JavaScript, dan TypeScript — mulai dari integrasi API sampai implementasi spesifikasi UX.',
+        'Migrasikan frontend dari codebase monolitik Haml & React.js ke arsitektur modular, hasilnya LCP membaik dan deployment jadi lebih fleksibel lewat CDN.',
+        'Kolaborasi sama tim DevOps untuk setup monitoring Datadog — berhasil turunkan error rate sampai 80%.',
+        'Standardisasi workflow TDD berbasis AI pakai Claude Code (planning + Agent Parallelization) untuk bikin proses development lebih konsisten dan efisien.',
+        'Implementasi CI/CD via Bitbucket Pipelines dan client-side caching dengan Vuex untuk kurangi redundant API call.',
       ],
     },
     {
@@ -267,8 +267,8 @@ const INDONESIAN_CONTENT = {
       location: 'Jakarta, Indonesia',
       date: 'Apr 2020 – Mar 2021',
       bullets: [
-        'Mengembangkan aplikasi web berbasis Vue.js berdasarkan mockup dan RESTful API.',
-        'Membuat library komponen reusable untuk pengembangan yang scalable dan mudah dirawat.',
+        'Kembangkan aplikasi web berbasis Vue.js dari mockup dan RESTful API.',
+        'Buat library komponen reusable yang bikin codebase lebih scalable dan gampang di-maintain.',
       ],
     },
     {
@@ -278,8 +278,8 @@ const INDONESIAN_CONTENT = {
       location: 'Jakarta, Indonesia',
       date: 'Okt 2018 – Mar 2020',
       bullets: [
-        'Membangun dan melakukan upgrade frontend dari Angular v4 ke v8.',
-        'Mengubah aplikasi web menjadi Progressive Web App dengan dukungan offline dan push notification melalui Firebase.',
+        'Bangun dan upgrade frontend dari Angular v4 ke v8.',
+        'Ubah aplikasi web jadi Progressive Web App — tambah dukungan offline dan push notification lewat Firebase.',
       ],
     },
     {
@@ -289,8 +289,8 @@ const INDONESIAN_CONTENT = {
       location: 'Jakarta, Indonesia',
       date: 'Jun 2017 – Agu 2017',
       bullets: [
-        'Menerjemahkan desain visual menjadi antarmuka fungsional menggunakan HTML, CSS, JavaScript, dan AngularJS.',
-        'Berkolaborasi dengan klien untuk mendefinisikan kebutuhan bisnis dan mendukung implementasinya.',
+        'Ubah desain visual jadi antarmuka yang fungsional pakai HTML, CSS, JavaScript, dan AngularJS.',
+        'Diskusi langsung sama klien untuk pahami kebutuhan bisnis dan bantu implementasinya.',
       ],
     },
   ],
@@ -334,25 +334,25 @@ const INDONESIAN_CONTENT = {
     {
       num: '01',
       title: 'Platform CRM',
-      desc: 'Frontend CRM full-feature dengan autentikasi aman, email builder drag-and-drop, messaging berbasis AI, serta pusat komunikasi multi-channel termasuk integrasi WhatsApp.',
+      desc: 'CRM frontend lengkap dengan autentikasi aman, email builder drag-and-drop, fitur messaging berbasis AI, dan integrasi WhatsApp untuk komunikasi multi-channel.',
       tags: ['Remix', 'shadcn/UI', 'TypeScript', 'JWT', 'TanStack Query'],
     },
     {
       num: '02',
-      title: 'Dashboard Analitik Data',
-      desc: 'Dashboard interaktif untuk visualisasi real-time metrik engagement pelanggan dan performa campaign, dengan strategi pengambilan data serta caching yang efisien.',
+      title: 'Dashboard Analitik',
+      desc: 'Dashboard interaktif untuk visualisasi real-time metrik engagement pelanggan dan performa campaign — dengan data fetching dan caching yang efisien.',
       tags: ['Recharts', 'TanStack Query', 'React', 'TypeScript'],
     },
     {
       num: '03',
       title: 'Migrasi Arsitektur Frontend',
-      desc: 'Memimpin migrasi berdampak tinggi dari codebase monolitik Haml & React.js ke arsitektur layanan modular, meningkatkan LCP dan memungkinkan deployment independen melalui distribusi CDN.',
+      desc: 'Pimpin migrasi dari codebase monolitik Haml & React.js ke arsitektur modular — hasilnya LCP lebih baik dan deployment jadi lebih fleksibel lewat CDN.',
       tags: ['Vue.js', 'Nginx', 'CDN', 'Bitbucket CI/CD', 'Datadog'],
     },
     {
       num: '04',
-      title: 'Konversi PWA',
-      desc: 'Mengubah aplikasi web Angular lawas menjadi Progressive Web Application penuh dengan kemampuan offline, service worker, dan push notification berbasis Firebase.',
+      title: 'Konversi ke PWA',
+      desc: 'Ubah aplikasi web Angular lama jadi Progressive Web App penuh — dengan mode offline, service worker, dan push notification via Firebase.',
       tags: ['Angular', 'Firebase', 'PWA', 'Service Workers'],
     },
   ],
@@ -363,7 +363,7 @@ const INDONESIAN_CONTENT = {
   },
   contact: {
     blurb:
-      'Saya terbuka untuk peluang baru. Jika Anda punya proyek, ide kolaborasi, atau hanya ingin menyapa, inbox saya selalu terbuka.',
+      'Lagi buka peluang baru nih. Kalau kamu punya proyek seru, ide kolaborasi, atau sekadar mau ngobrol — inbox saya selalu terbuka.',
     email: 'hello@aldiyusron.com',
     links: [
       {
