@@ -1,6 +1,6 @@
 # I Built My Portfolio in a Single Day — Here's Every Decision I Made Along the Way
 
-*A frontend engineer's honest account of building aldiyusron.com from scratch, with Claude Code as a collaborator.*
+_A frontend engineer's honest account of building aldiyusron.com from scratch, with Claude Code as a collaborator._
 
 ---
 
@@ -32,7 +32,7 @@ Every string — hero copy, job history, skills, project descriptions — lives 
 
 The initial commit tells an honest story: one file, `Portfolio.jsx`, 893 lines. Everything in one place — hero, experience timeline, skills grid, projects, contact. No components, no abstraction.
 
-This was intentional. I wanted to see the whole thing on screen before deciding how to split it. Premature decomposition is a real time sink. The monolith *worked*. It rendered. It looked right. That's the goal of a first commit.
+This was intentional. I wanted to see the whole thing on screen before deciding how to split it. Premature decomposition is a real time sink. The monolith _worked_. It rendered. It looked right. That's the goal of a first commit.
 
 The tech decisions baked into that first version:
 
@@ -49,7 +49,7 @@ With a working skeleton, the next round was polish.
 
 ### Favicon and branding
 
-The default Vite favicon is a triangle. Mine is now a custom SVG — a minimalist "M.A.Y_" mark using the site's accent color. A small thing, but it's what you see in every browser tab. Worth 20 minutes.
+The default Vite favicon is a triangle. Mine is now a custom SVG — a minimalist "M.A.Y\_" mark using the site's accent color. A small thing, but it's what you see in every browser tab. Worth 20 minutes.
 
 I also updated the page `<title>` from the Vite default to my full name and role.
 
@@ -61,13 +61,13 @@ Spacing is the silent language of design. The initial values were too generous �
 
 The first version of my hero tagline read something functional but flat. I iterated on it twice — first for clarity, then for warmth. The final version:
 
-> *// let's build something great together*
+> _// let's build something great together_
 
 That leading `//` is a nod to code comments. It sets tone: this is a developer's site, written by someone who thinks in code.
 
 The summary below it went through similar rounds. The original was fine. The final version is specific:
 
-> *Experienced frontend engineer specializing in scalable web applications using Vue.js, React (Remix), and TypeScript, with over 6 years in the field. An early advocate of AI-powered development — using Claude Code to accelerate delivery and elevate code quality.*
+> _Experienced frontend engineer specializing in scalable web applications using Vue.js, React (Remix), and TypeScript, with over 6 years in the field. An early advocate of AI-powered development — using Claude Code to accelerate delivery and elevate code quality._
 
 The last sentence matters to me. It's not just credential signaling — it accurately describes how I work now.
 
@@ -140,29 +140,29 @@ Medium provides an RSS feed at `https://medium.com/feed/@aldiyusron`. The proble
 The solution: **rss2json.com**, a free API that takes any RSS URL and returns JSON. No API key. No backend. Just:
 
 ```js
-const RSS2JSON_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent('https://medium.com/feed/@aldiyusron')}`
+const RSS2JSON_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent("https://medium.com/feed/@aldiyusron")}`;
 ```
 
 I wrapped this in a custom hook:
 
 ```js
 export function useMediumPosts() {
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(RSS2JSON_URL)
-      .then(res => res.json())
-      .then(data => {
-        if (data.status !== 'ok') throw new Error('Feed unavailable')
-        setPosts(data.items.map(transformPost))
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status !== "ok") throw new Error("Feed unavailable");
+        setPosts(data.items.map(transformPost));
       })
-      .catch(err => setError(err.message))
-      .finally(() => setLoading(false))
-  }, [])
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  }, []);
 
-  return { posts, loading, error }
+  return { posts, loading, error };
 }
 ```
 
@@ -186,15 +186,15 @@ No more hardcoded posts in `data.js`. Publish on Medium, it shows up on the port
 
 ## The Stack, Summarized
 
-| Concern | Choice | Why |
-|---|---|---|
-| Framework | React 19 | Modern, no overhead |
-| Build tool | Vite 8 | Instant HMR, tiny output |
-| Styling | Plain CSS + custom properties | Full control, no dependencies |
-| Content | `data.js` locale map | EN/ID without duplicating layout |
-| Blog data | rss2json + `useMediumPosts` hook | Zero-maintenance Medium sync |
-| Hosting | Vercel | Free, fast, custom domain in 5 min |
-| AI tooling | Claude Code | Architecture, copy, iteration speed |
+| Concern    | Choice                           | Why                                 |
+| ---------- | -------------------------------- | ----------------------------------- |
+| Framework  | React 19                         | Modern, no overhead                 |
+| Build tool | Vite 8                           | Instant HMR, tiny output            |
+| Styling    | Plain CSS + custom properties    | Full control, no dependencies       |
+| Content    | `data.js` locale map             | EN/ID without duplicating layout    |
+| Blog data  | rss2json + `useMediumPosts` hook | Zero-maintenance Medium sync        |
+| Hosting    | Vercel                           | Free, fast, custom domain in 5 min  |
+| AI tooling | Claude Code                      | Architecture, copy, iteration speed |
 
 ---
 
@@ -208,4 +208,4 @@ If you want to look at the source code or just say hi, find me at [aldiyusron.co
 
 ---
 
-*Tags: React, Vite, Frontend, Portfolio, Claude Code*
+_Tags: React, Vite, Frontend, Portfolio, Claude Code_
