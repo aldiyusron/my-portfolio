@@ -202,7 +202,7 @@ export default function Portfolio() {
 
         {/* ── Hero / About ── */}
         <section id="about" className="pf-hero">
-          <div className="pf-hero__tag">// available for new opportunities</div>
+          <div className="pf-hero__tag">// let's build something great together</div>
           <h1 className="pf-hero__name">
             Muhammad<br />Aldi Yusron
           </h1>
@@ -211,9 +211,10 @@ export default function Portfolio() {
             <span className={`pf-cursor ${cursorOn ? "pf-cursor--on" : ""}`} />
           </div>
           <p className="pf-hero__summary">
-            Frontend engineer with 6+ years of experience building scalable web applications
-            with Vue.js, React (Remix), and TypeScript. Early adopter of AI-driven development
-            workflows — leveraging Claude Code to maximize velocity and architectural quality.
+            Experienced frontend engineer specializing in scalable web applications using
+            Vue.js, React (Remix), and TypeScript, with over 6 years in the field. An early
+            advocate of AI-powered development — using Claude Code to accelerate delivery and
+            elevate code quality.
           </p>
           <div className="pf-hero__cta">
             <a href="mailto:aldiyusron.work@gmail.com" className="pf-btn pf-btn--primary">
