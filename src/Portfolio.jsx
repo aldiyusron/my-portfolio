@@ -217,7 +217,7 @@ export default function Portfolio() {
             elevate code quality.
           </p>
           <div className="pf-hero__cta">
-            <a href="mailto:aldiyusron.work@gmail.com" className="pf-btn pf-btn--primary">
+            <a href="mailto:hello@aldiyusron.com" className="pf-btn pf-btn--primary">
               Get in Touch
             </a>
             <a
@@ -326,8 +326,8 @@ export default function Portfolio() {
             I'm open to new opportunities. Whether you have a project in mind
             or just want to say hello — my inbox is always open.
           </p>
-          <a href="mailto:aldiyusron.work@gmail.com" className="pf-contact__email">
-            aldiyusron.work@gmail.com ↗
+          <a href="mailto:hello@aldiyusron.com" className="pf-contact__email">
+            hello@aldiyusron.com ↗
           </a>
           <div className="pf-contact__links">
             <a
