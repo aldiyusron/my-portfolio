@@ -1,25 +1,15 @@
 import { useEffect, useState } from 'react'
 
-const MEDIUM_RSS = 'https://medium.com/feed/@aldiyusron'
-const RSS2JSON_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(MEDIUM_RSS)}`
-
-function stripHtml(html) {
-  const tmp = document.createElement('div')
-  tmp.innerHTML = html
-  return tmp.textContent || tmp.innerText || ''
-}
+const API_URL = '/api/medium-posts'
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
 }
 
 function transformPost(item) {
-  const fullText = stripHtml(item.description)
-  const excerpt = fullText.replace(/\s+/g, ' ').trim().slice(0, 200).trimEnd() + '…'
-
   return {
     title: item.title,
-    excerpt,
+    excerpt: item.excerpt,
     date: formatDate(item.pubDate),
     tags: item.categories.slice(0, 3),
     href: item.link,
@@ -32,7 +22,7 @@ export function useMediumPosts() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch(RSS2JSON_URL)
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
         if (data.status !== 'ok') throw new Error('Feed unavailable')
