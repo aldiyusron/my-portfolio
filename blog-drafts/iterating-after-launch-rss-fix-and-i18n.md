@@ -116,7 +116,92 @@ After both changes: the dev server returns JSON, production returns JSON, the ar
 
 ## Part 2: Adding i18n — Making the Portfolio Bilingual
 
-_[This section will be filled in after the i18n implementation session. The plan: add English/Indonesian support using react-i18next, covering the library choice, translation file structure, hooking into existing components, and anything that broke along the way.]_
+The portfolio launched bilingual from day one — English and Indonesian, both fully written out. The first post covered how that content lived in a single `data.js` file as two parallel objects. It worked, but it wasn't really an i18n system. It was content bundled with logic, passed as props down through every layer of the component tree. This session was about giving it proper structure.
+
+### The Library Question
+
+The obvious answer is [react-i18next](https://react.i18next.com/). It's the industry standard, battle-tested, and handles everything: pluralization, interpolation, lazy-loaded locale bundles, fallback chains, a plugin ecosystem.
+
+But I paused before reaching for it.
+
+This is a static personal portfolio. The content doesn't change often. There's no dynamic text with variables like `"Hello, {{name}}"`. There's no pluralization. There are exactly two languages, and both are fully written out in advance. react-i18next would add ~40 kB to the bundle and a non-trivial amount of configuration for features I'd never use.
+
+The actual requirement was simple: given a locale, return the right content object. That's a function, not a library.
+
+### The Structure
+
+All translatable content lives in two files:
+
+```
+src/i18n/
+├── context.jsx          # Provider, hook, locale utilities
+└── locales/
+    ├── en.js            # English
+    └── id.js            # Indonesian (Bahasa Indonesia)
+```
+
+Each locale file exports a plain JS object — nav labels, section headings, experience bullets, project descriptions, everything. They're parallel in structure, which makes it easy to spot gaps and easy to add a third language later by just adding a new file.
+
+### URL-Based Locale Detection
+
+The locale is determined from the URL path:
+
+- `/` → English
+- `/id` → Indonesian
+- `/id/*` → Indonesian (for any sub-path)
+
+```js
+export function getLocaleFromPath(pathname) {
+  return pathname === '/id' || pathname.startsWith('/id/') ? 'id' : 'en'
+}
+```
+
+This happens once at the top of the tree, in `App.jsx`, before anything renders. No client-side redirect, no flash of wrong language — the correct content is loaded on the first render.
+
+Vercel's rewrite rules already send all paths to `index.html`, so `/id` works without any server-side routing config beyond what was already in place.
+
+### React Context Instead of Prop-Drilling
+
+Before i18n, all content was defined in a single `data.js` file and passed from `App` → `Portfolio` → every section component as props. That worked, but it meant every intermediate component had to accept and forward content it didn't care about.
+
+The new setup uses a React Context:
+
+```jsx
+// src/i18n/context.jsx
+export function I18nProvider({ locale, children }) {
+  const t = getTranslations(locale)
+  const localeSwitch = { active: locale, options: LOCALE_OPTIONS }
+
+  return (
+    <I18nContext.Provider value={{ locale, t, localeSwitch }}>
+      {children}
+    </I18nContext.Provider>
+  )
+}
+
+export function useTranslation() {
+  const ctx = useContext(I18nContext)
+  if (!ctx) throw new Error('useTranslation must be used inside I18nProvider')
+  return ctx
+}
+```
+
+`App.jsx` wraps the app in `I18nProvider`. `Portfolio.jsx` calls `useTranslation()` and pulls out `t` (the translations object) and `localeSwitch` (for the EN/ID toggle in the nav). The individual section components — `HeroSection`, `ExperienceSection`, etc. — still receive their slice of content as props, which keeps them cleanly decoupled from the i18n system and reusable in other contexts.
+
+### The Language Switcher
+
+The nav already had EN/ID toggle links. Those are now driven by `localeSwitch.options` from the context, so the active state and hrefs are always in sync with the current locale. Switching language is just a full page navigation to `/` or `/id` — the page re-renders with the correct content, and `document.documentElement.lang` is set accordingly for screen readers and search engines.
+
+### What I'd Change If This Got Bigger
+
+The custom approach is right for now, but there are clear thresholds where I'd reconsider:
+
+- **Third language** — still fine, just add a locale file
+- **Dynamic content** (user-facing messages, form errors) — reach for react-i18next's interpolation
+- **Content from a CMS** — need lazy loading and a backend loader plugin
+- **Pluralization** — the custom code handles zero edge cases here; react-i18next does it properly
+
+For a portfolio, none of those apply. The tradeoff — zero dependencies, full transparency, trivial to understand — is worth it.
 
 ---
 
