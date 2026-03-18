@@ -116,7 +116,7 @@ After both changes: the dev server returns JSON, production returns JSON, the ar
 
 ## Part 2: Adding i18n — Making the Portfolio Bilingual
 
-The portfolio was originally English-only. That's fine for most audiences, but I wanted an Indonesian version too — both for family and local professional contacts. So the question became: what's the right way to add bilingual support to a React app?
+The portfolio launched bilingual from day one — English and Indonesian, both fully written out. The first post covered how that content lived in a single `data.js` file as two parallel objects. It worked, but it wasn't really an i18n system. It was content bundled with logic, passed as props down through every layer of the component tree. This session was about giving it proper structure.
 
 ### The Library Question
 
