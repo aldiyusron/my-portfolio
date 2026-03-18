@@ -7,25 +7,12 @@ import { PortfolioNav } from './portfolio/components/PortfolioNav'
 import { ProjectsSection } from './portfolio/components/ProjectsSection'
 import { SkillsSection } from './portfolio/components/SkillsSection'
 import { useTypewriterTitle } from './portfolio/hooks/useTypewriterTitle'
+import { useTranslation } from './i18n/context'
 import './portfolio/Portfolio.css'
 
-export default function Portfolio({ content, localeSwitch }) {
-  const {
-    blogSection,
-    contact,
-    contactSection,
-    experiences,
-    footer,
-    hero,
-    navItems,
-    projects,
-    projectSection,
-    skillGroups,
-    skillsSection,
-    typingStrings,
-    workHistorySection,
-  } = content
-  const { cursorOn, displayText } = useTypewriterTitle(typingStrings)
+export default function Portfolio() {
+  const { t, localeSwitch } = useTranslation()
+  const { cursorOn, displayText } = useTypewriterTitle(t.typingStrings)
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId)
@@ -46,19 +33,19 @@ export default function Portfolio({ content, localeSwitch }) {
 
   return (
     <div className='pf'>
-      <PortfolioNav items={navItems} onNavigate={scrollToSection} localeSwitch={localeSwitch} />
+      <PortfolioNav items={t.navItems} onNavigate={scrollToSection} localeSwitch={localeSwitch} />
       <HeroSection
-        hero={hero}
+        hero={t.hero}
         cursorOn={cursorOn}
         displayText={displayText}
         onNavigate={scrollToSection}
       />
-      <ExperienceSection section={workHistorySection} experiences={experiences} />
-      <SkillsSection section={skillsSection} skillGroups={skillGroups} />
-      <ProjectsSection section={projectSection} projects={projects} />
-      <BlogSection section={blogSection} />
-      <ContactSection section={contactSection} contact={contact} />
-      <PortfolioFooter footer={footer} />
+      <ExperienceSection section={t.workHistorySection} experiences={t.experiences} />
+      <SkillsSection section={t.skillsSection} skillGroups={t.skillGroups} />
+      <ProjectsSection section={t.projectSection} projects={t.projects} />
+      <BlogSection section={t.blogSection} />
+      <ContactSection section={t.contactSection} contact={t.contact} />
+      <PortfolioFooter footer={t.footer} />
     </div>
   )
 }
