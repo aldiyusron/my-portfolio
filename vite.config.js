@@ -46,21 +46,27 @@ function mediumPostsDevPlugin() {
   return {
     name: 'medium-posts-dev',
     configureServer(server) {
-      server.middlewares.use('/api/medium-posts', async (_req, res) => {
-        try {
-          const upstream = await fetch(MEDIUM_RSS, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (compatible; portfolio-bot/1.0)' },
+      // Use a non-async handler so Connect sees a synchronous return (no next() call)
+      // which prevents Vite's own module-transform middleware from also firing.
+      server.middlewares.use((req, res, next) => {
+        if (req.url !== '/api/medium-posts') return next()
+
+        fetch(MEDIUM_RSS, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; portfolio-bot/1.0)' } })
+          .then((r) => {
+            if (!r.ok) throw new Error(`Upstream ${r.status}`)
+            return r.text()
           })
-          if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`)
-          const xml = await upstream.text()
-          const items = parseItems(xml)
-          res.setHeader('Content-Type', 'application/json')
-          res.end(JSON.stringify({ status: 'ok', items }))
-        } catch (err) {
-          res.statusCode = 500
-          res.setHeader('Content-Type', 'application/json')
-          res.end(JSON.stringify({ error: err.message }))
-        }
+          .then((xml) => {
+            const items = parseItems(xml)
+            res.writeHead(200, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ status: 'ok', items }))
+          })
+          .catch((err) => {
+            if (!res.headersSent) {
+              res.writeHead(500, { 'Content-Type': 'application/json' })
+              res.end(JSON.stringify({ error: err.message }))
+            }
+          })
       })
     },
   }
@@ -68,5 +74,11 @@ function mediumPostsDevPlugin() {
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    fs: {
+      // Prevent Vite from serving api/ files as JS modules
+      deny: ['api'],
+    },
+  },
   plugins: [react(), mediumPostsDevPlugin()],
 })
