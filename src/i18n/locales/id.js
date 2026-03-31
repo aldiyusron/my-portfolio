@@ -127,7 +127,7 @@ const id = {
   projects: [
     {
       num: '01',
-      title: 'CubiqCloud',
+      title: 'Cubiqcloud',
       desc: 'Proyek freelance membangun platform CRM lengkap — mencakup email builder drag-and-drop, alur pesan berbasis AI, dashboard analitik data, dan integrasi chatbot WhatsApp.',
       tags: ['Freelance', 'Remix', 'shadcn/UI', 'TypeScript', 'Recharts', 'TanStack Query'],
     },

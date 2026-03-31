@@ -127,7 +127,7 @@ const en = {
   projects: [
     {
       num: '01',
-      title: 'CubiqCloud',
+      title: 'Cubiqcloud',
       desc: 'Freelance engagement building a full-featured CRM platform — including a drag-and-drop email builder, AI-powered messaging workflows, a data analytics dashboard, and WhatsApp chatbot integration.',
       tags: ['Freelance', 'Remix', 'shadcn/UI', 'TypeScript', 'Recharts', 'TanStack Query'],
     },
