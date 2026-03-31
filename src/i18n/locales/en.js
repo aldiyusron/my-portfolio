@@ -31,7 +31,7 @@ const en = {
     stats: [
       { value: '6+', label: 'Years Exp.' },
       { value: '80%', label: 'Error Rate ↓' },
-      { value: '5', label: 'Companies' },
+      { value: '4', label: 'Companies' },
     ],
   },
   workHistorySection: {
@@ -40,20 +40,6 @@ const en = {
     heading: 'Experience',
   },
   experiences: [
-    {
-      company: 'CubiqCloud',
-      role: 'Frontend Engineer',
-      type: 'Freelance',
-      location: 'Remote',
-      date: 'Jul 2025 – Present',
-      bullets: [
-        'Architected a high-utility CRM frontend using Remix and shadcn/UI with secure JWT authentication and Zod-based validation.',
-        'Engineered a custom drag-and-drop email builder by extending email-builder-js, enabling personalized customer automation.',
-        'Integrated AI-powered email generation workflows, leveraging LLMs to assist users in drafting high-conversion communication.',
-        'Built a Data Analytics Dashboard with Recharts and TanStack Query for customer engagement and campaign performance visualization.',
-        'Managed WhatsApp chatbot integration to enhance multi-channel communication capabilities.',
-      ],
-    },
     {
       company: 'Mekari',
       role: 'Software Engineer – Frontend',
@@ -141,24 +127,18 @@ const en = {
   projects: [
     {
       num: '01',
-      title: 'CRM Platform',
-      desc: 'Full-featured CRM frontend featuring secure auth, a drag-and-drop email builder, AI-generated messaging, and a multi-channel communication hub including WhatsApp integration.',
-      tags: ['Remix', 'shadcn/UI', 'TypeScript', 'JWT', 'TanStack Query'],
+      title: 'Cubiqcloud',
+      desc: 'Freelance engagement building a full-featured CRM platform — including a drag-and-drop email builder, AI-powered messaging workflows, a data analytics dashboard, and WhatsApp chatbot integration.',
+      tags: ['Freelance', 'Remix', 'shadcn/UI', 'TypeScript', 'Recharts', 'TanStack Query'],
     },
     {
       num: '02',
-      title: 'Data Analytics Dashboard',
-      desc: 'Interactive dashboard for real-time visualization of customer engagement metrics and campaign performance, with efficient data fetching and caching strategies.',
-      tags: ['Recharts', 'TanStack Query', 'React', 'TypeScript'],
-    },
-    {
-      num: '03',
       title: 'Frontend Architecture Migration',
       desc: 'Led a high-impact migration from a monolithic Haml & React.js codebase to a modular service architecture, boosting LCP and enabling independent deployment via CDN distribution.',
       tags: ['Vue.js', 'Nginx', 'CDN', 'Bitbucket CI/CD', 'Datadog'],
     },
     {
-      num: '04',
+      num: '03',
       title: 'PWA Conversion',
       desc: 'Converted a legacy Angular web app into a full Progressive Web Application with offline capabilities, service workers, and Firebase-powered push notifications.',
       tags: ['Angular', 'Firebase', 'PWA', 'Service Workers'],
