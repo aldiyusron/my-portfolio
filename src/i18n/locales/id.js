@@ -31,7 +31,7 @@ const id = {
     stats: [
       { value: '6+', label: 'Tahun Pengalaman' },
       { value: '80%', label: 'Penurunan Error ↓' },
-      { value: '5', label: 'Perusahaan' },
+      { value: '4', label: 'Perusahaan' },
     ],
   },
   workHistorySection: {
@@ -40,20 +40,6 @@ const id = {
     heading: 'Pengalaman',
   },
   experiences: [
-    {
-      company: 'CubiqCloud',
-      role: 'Frontend Engineer',
-      type: 'Freelance',
-      location: 'Remote',
-      date: 'Jul 2025 – Sekarang',
-      bullets: [
-        'Merancang frontend CRM menggunakan Remix dan shadcn/UI dengan autentikasi JWT yang aman dan validasi berbasis Zod.',
-        'Membangun email builder drag-and-drop kustom dengan mengembangkan email-builder-js, memungkinkan otomasi komunikasi pelanggan yang lebih personal.',
-        'Mengintegrasikan alur pembuatan email berbasis AI menggunakan LLM untuk membantu pengguna menyusun komunikasi yang lebih efektif.',
-        'Membangun dashboard analitik dengan Recharts dan TanStack Query untuk visualisasi engagement pelanggan dan performa campaign.',
-        'Mengelola integrasi chatbot WhatsApp untuk memperkuat kemampuan komunikasi multi-channel.',
-      ],
-    },
     {
       company: 'Mekari',
       role: 'Software Engineer – Frontend',
@@ -141,24 +127,18 @@ const id = {
   projects: [
     {
       num: '01',
-      title: 'Platform CRM',
-      desc: 'Frontend CRM lengkap dengan autentikasi aman, email builder drag-and-drop, pesan berbasis AI, dan pusat komunikasi multi-channel termasuk integrasi WhatsApp.',
-      tags: ['Remix', 'shadcn/UI', 'TypeScript', 'JWT', 'TanStack Query'],
+      title: 'CubiqCloud',
+      desc: 'Proyek freelance membangun platform CRM lengkap — mencakup email builder drag-and-drop, alur pesan berbasis AI, dashboard analitik data, dan integrasi chatbot WhatsApp.',
+      tags: ['Freelance', 'Remix', 'shadcn/UI', 'TypeScript', 'Recharts', 'TanStack Query'],
     },
     {
       num: '02',
-      title: 'Dashboard Analitik',
-      desc: 'Dashboard interaktif untuk visualisasi real-time metrik engagement pelanggan dan performa campaign, dengan strategi pengambilan data serta caching yang efisien.',
-      tags: ['Recharts', 'TanStack Query', 'React', 'TypeScript'],
-    },
-    {
-      num: '03',
       title: 'Migrasi Arsitektur Frontend',
       desc: 'Memimpin migrasi berdampak tinggi dari codebase monolitik Haml & React.js ke arsitektur layanan modular, meningkatkan LCP dan memungkinkan deployment independen melalui distribusi CDN.',
       tags: ['Vue.js', 'Nginx', 'CDN', 'Bitbucket CI/CD', 'Datadog'],
     },
     {
-      num: '04',
+      num: '03',
       title: 'Konversi ke PWA',
       desc: 'Mengonversi aplikasi web Angular lama menjadi Progressive Web Application penuh dengan kemampuan offline, service worker, dan push notification berbasis Firebase.',
       tags: ['Angular', 'Firebase', 'PWA', 'Service Workers'],
